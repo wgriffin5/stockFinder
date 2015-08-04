@@ -6,16 +6,17 @@
       <input type="text" ng-model='newSymbol' placeholder="Enter stock symbol">
       <input type="submit" value="Add">
 
+{{ newSymbol }}
   </form>
 <div ng-show="error">
   Error no dice !. Email williamgriffin989@gmail.com and tell me it's busted :)
 </div>
 
-{{ newSymbol }}
+
 
 
   <ul>
-    <li ng-repeat="stock in Stocks">
+    <li ng-repeat="stock in stocks">
 
       {{ stock.symbol }}, {{ stock.name }}, {{ stock.bid }}, {{ stock.ask}}, {{ stock.year_low }}, {{ stock.year_high }}
       <a href='' ng-click="deleteStock(stock.id, $index)">Remove</a>

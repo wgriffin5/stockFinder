@@ -1,1 +1,1 @@
-angular.module("stockFinder", ['ngResource']);
+var app = angular.module("stockFinder", ['ngResource']);
