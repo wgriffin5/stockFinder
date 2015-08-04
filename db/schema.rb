@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(version: 20150731142818) do
 
   create_table "stocks", force: :cascade do |t|
-    t.string   "symbol"
-    t.string   "name"
-    t.decimal  "bid"
-    t.decimal  "ask"
-    t.decimal  "year_high"
-    t.decimal  "year_low"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "symbol",     limit: 255
+    t.string   "name",       limit: 255
+    t.decimal  "bid",                    precision: 10
+    t.decimal  "ask",                    precision: 10
+    t.decimal  "year_high",              precision: 10
+    t.decimal  "year_low",               precision: 10
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
 end

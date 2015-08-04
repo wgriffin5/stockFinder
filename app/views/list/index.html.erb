@@ -1,7 +1,24 @@
 <h1>A Stockfinder</h1>
 
-<input type="text" ng-model='newSymbol' placeholder="Enter stock symbol">
-<input type="submit" value="Add">
-</form>
+<div ng-controller="StocksCtrl">
+  <form ng-submit="createStock()">
+
+      <input type="text" ng-model='newSymbol' placeholder="Enter stock symbol">
+      <input type="submit" value="Add">
+
+  </form>
+<div ng-show="error">
+  Error no dice !. Email williamgriffin989@gmail.com and tell me it's busted :)
+</div>
 
 {{ newSymbol }}
+
+
+  <ul>
+    <li ng-repeat="stock in Stocks">
+
+      {{ stock.symbol }}, {{ stock.name }}, {{ stock.bid }}, {{ stock.ask}}, {{ stock.year_low }}, {{ stock.year_high }}
+      <a href='' ng-click="deleteStock(stock.id, $index)">Remove</a>
+    </li>
+  </ul>
+</div>
